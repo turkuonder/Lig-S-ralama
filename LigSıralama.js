@@ -9,12 +9,12 @@ var tpuan= new Array();
 var atılang= new Array();
 var yenileng= new Array();
 var averaj= new Array();
-for(k=0;k<=4;k++;)
+for(k=0;k<=4;k++)
 {
 tad[k]=prompt("Takım Adını Giriniz");
 gsay[k]=parseInt(prompt("Galibiyet Sayısını Giriniz"));
 msay[k]=parseInt(prompt("Mağlubiyet Sayısını Giriniz"));
-bsay[k]=parseInt(prompt("Galibiyet Sayısını Giriniz"));
+bsay[k]=parseInt(prompt("Beraberlik Sayısını Giriniz"));
 atılang[k]=parseInt(prompt("Atılan Gol Sayısını Giriniz"));
 yenileng[k]=parseInt(prompt("Yenilen Gol Sayısını Giriniz"));
 tpuan[k]=gsay[k]*3+bsay[k];
@@ -22,7 +22,7 @@ averaj[k]=atılang[k]-yenileng[k];
 }
 for(i=0;i<=3;i++)
 for(j=i+1;j<=4;j++)
-    if(tpuan[i]<tpuan[j])
+    if(tpuan[i]<tpuan[j] || (tpuan[i]==tpuan[j] && averaj[i]<averaj[j]))
     {
         bos=tad[i]; tad[i]=tad[j];tad[j]=bos;
         bos=gsay[i];gsay[i]=gsay[j];gsay[j]=bos;

@@ -4,7 +4,45 @@
   
 </style>
 <script language="JavaScript">
-  
+  function dizi()
+{
+var bos=0;
+var tad= new Array();
+var gsay= new Array();
+var msay= new Array();
+var bsay= new Array();
+var tpuan= new Array();
+var atılang= new Array();
+var yenileng= new Array();
+var averaj= new Array();
+for(k=0;k<=4;k++;)
+{
+tad[k]=prompt("Takım Adını Giriniz");
+gsay[k]=parseInt(prompt("Galibiyet Sayısını Giriniz"));
+msay[k]=parseInt(prompt("Mağlubiyet Sayısını Giriniz"));
+bsay[k]=parseInt(prompt("Galibiyet Sayısını Giriniz"));
+atılang[k]=parseInt(prompt("Atılan Gol Sayısını Giriniz"));
+yenileng[k]=parseInt(prompt("Yenilen Gol Sayısını Giriniz"));
+tpuan[k]=gsay[k]*3+bsay[k];
+averaj[k]=atılang[k]-yenileng[k];
+}
+for(i=0;i<=3;i++)
+for(j=i+1;j<=4;j++)
+    if(tpuan[i]<tpuan[j])
+    {
+        bos=tad[i]; tad[i]=tad[j];tad[j]=bos;
+        bos=gsay[i];gsay[i]=gsay[j];gsay[j]=bos;
+        bos=msay[i];msay[i]=msay[j];msay[j]=bos;
+        bos=bsay[i];bsay[i]=bsay[j];bsay[j]=bos;
+        bos=tpuan[i];tpuan[i]=tpuan[j];tpuan[j]=bos;
+        bos=atılang[i];atılang[i]=atılang[j];atılang[j]=bos;
+        bos=yenileng[i];yenileng[i]=yenileng[j];yenileng[j]=bos;
+        bos=averaj[i];averaj[i]=averaj[j];averaj[j]=bos;
+    }
+document.write("<table border=1 align=center cellpading=10 cellspacing=10>");
+for(k=0;k<=4;k++)
+document.write("<tr><td>"+tad[k]+"</td><td>"+gsay[k]+"</td><td>"+msay[k]+"</td><td>"+bsay[k]+"</td><td>"+tpuan[k]+"</td><td>"+atılang[k]+"</td><td>"+yenileng[k]+"</td><td>"+averaj[k]+"</td></tr>");
+}
 </script>
 </head>
 <body>
